@@ -14,12 +14,21 @@ function App() {
     SpeechRecognition.stopListening();
   };
 
+  console.log(transcript);
+
   return (
     <div className="App">
       <h1>React Voice Recognition</h1>
       <button onClick={startListening}>Start Listening</button>
       <button onClick={stopListening}>Stop Listening</button>
-      <button onClick={resetTranscript}>Reset</button>
+      <button
+        onClick={() => {
+          resetTranscript();
+          console.clear();
+        }}
+      >
+        Reset
+      </button>
       <div>
         <h2>Transcript:</h2>
         <p>{transcript}</p>
